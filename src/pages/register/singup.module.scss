@@ -1,0 +1,19 @@
+.signupWrapper{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    .cont{
+        width: 30%;
+    }
+
+    .linkText{
+        display: flex;
+        justify-content: end;
+        .linkPlaintxt{
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.wrapper{
+    background-color: white;
+    height: calc(100vh - 15rem);
+    max-height: calc(100vh - 15rem);
+    overflow: auto;
+    border-right: 1px solid #0000;
+    .header{
+        padding: 1.7rem;
+        background-color: #dedede;
+    }
+    .contactItem{
+        padding: 1rem;
+        cursor: pointer;
+        &:hover{
+            background-color: #f5eded;
+            cursor: pointer;
+        }
+    }
+    .active{
+        background-color: #f5eded; 
+    }
+}

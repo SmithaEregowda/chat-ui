@@ -1,0 +1,20 @@
+.chatcontainer{
+background-color: #dfdfdf;  
+height: 100vh;
+position: relative;
+.chatHeader{
+  background-color: #e7bfbf;
+  padding:4rem;
+}
+.chatConetnt{
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  position: absolute;
+  top: 7rem;
+  left: 15rem;
+  width: calc(100vw - 25rem);
+  border: 1px solid #dfdfdf;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px 3px #948484;
+}
+}

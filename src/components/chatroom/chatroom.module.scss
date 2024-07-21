@@ -1,0 +1,44 @@
+.wrapper{
+    background-color: #eae6df;
+    height: calc(100vh - 15rem);
+    max-height: calc(100vh - 15rem);
+    overflow: auto;
+    display: flex;
+    flex-flow: column;
+    .header{
+        padding: 1rem;
+        background-color: #dedede;
+    }
+    .chatBody{
+        flex: 1;
+    }
+    .chatinputContainer{
+        display: flex;
+        justify-content: end;
+        background-color: #dedede;
+        padding: 0.5rem 1rem;
+    }
+
+    .messages{
+        display: grid;
+        grid-gap: 0.5rem;
+        padding: 0.5rem;
+        .sent{
+            background-color: #dedede;
+            padding: 0.5rem;
+            width: fit-content;
+            border-radius: 5px;
+        }
+        .messageCont{
+            display: grid;
+            justify-content: end;
+        }
+        .recv{
+            background-color: #e7bfbf;
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+    }
+
+    
+}
