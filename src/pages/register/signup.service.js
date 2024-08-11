@@ -1,5 +1,5 @@
 export  function signup(requestOptions) {
-    const data =fetch(`http://localhost:4040/user/signup`,requestOptions)
+    const data =fetch(`https://chat-apis-crde.onrender.com/user/signup`,requestOptions)
        .then(res => {
            return res.json();
        }).then(data=>{return data;} )
@@ -7,7 +7,7 @@ export  function signup(requestOptions) {
    }
 
    export  function LoginService(requestOptions) {
-    const data =fetch(`http://localhost:4040/user/login`,requestOptions)
+    const data =fetch(`https://chat-apis-crde.onrender.com/user/login`,requestOptions)
        .then(res => {
            return res.json();
        }).then(data=>{return data;} )
@@ -15,7 +15,7 @@ export  function signup(requestOptions) {
    }
 
    export  function getAllUsers(requestOptions,userId) {
-    const data =fetch(`http://localhost:4040/user/getusers/${userId}`,requestOptions)
+    const data =fetch(`https://chat-apis-crde.onrender.com/user/getusers/${userId}`,requestOptions)
        .then(res => {
            return res.json();
        }).then(data=>{return data;} )

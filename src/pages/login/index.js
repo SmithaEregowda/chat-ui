@@ -5,7 +5,6 @@ import { LoginService } from '../register/signup.service';
 import { useNavigate } from 'react-router';
 import Cookies from 'universal-cookie';
 // import io from "socket.io-client";
-// const socket = io.connect("http://localhost:4040");
 
 const Login = () => {
     const [formData, setFormData] = useState({

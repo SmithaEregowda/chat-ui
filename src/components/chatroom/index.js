@@ -10,7 +10,7 @@ const ChatRoom = ({selecteduser,sendmsghandler,messages}) => {
       <div className={styles.chatBody}>
         <div className={styles.messages}>
         {messages?.map((msg)=>(
-          <div className={`${!msg?.byme&&styles.messageCont}`}>
+          <div className={`${msg?.byme&&styles.messageCont}`}>
             <div className={`${msg?.byme?styles.sent:styles.recv}`}>{msg?.message?.text}</div>
           </div>
         ))}

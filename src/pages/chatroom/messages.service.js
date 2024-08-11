@@ -1,5 +1,5 @@
 export  function getUserMessages(requestOptions) {
-    const data =fetch(`http://localhost:4040/message`,requestOptions)
+    const data =fetch(`https://chat-apis-crde.onrender.com/message`,requestOptions)
        .then(res => {
            return res.json();
        }).then(data=>{return data;} )
@@ -7,7 +7,7 @@ export  function getUserMessages(requestOptions) {
    }
 
    export  function AddMessage(requestOptions) {
-    const data =fetch(`http://localhost:4040/message/add`,requestOptions)
+    const data =fetch(`https://chat-apis-crde.onrender.com/message/add`,requestOptions)
        .then(res => {
            return res.json();
        }).then(data=>{return data;} )

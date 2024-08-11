@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router'
 import { getAllUsers } from '../register/signup.service'
 import { AddMessage, getUserMessages } from './messages.service'
 import io from 'socket.io-client'
-// const socket=io.connect("http://localhost:4040")
 
 const Chat = () => {
     const cookies = new Cookies(null, { path: '/' });
@@ -16,9 +15,9 @@ const Chat = () => {
     const [contacts,setContacts]=useState();
     const navigate=useNavigate();
     const [selecteduser,setSelectedUser]=useState();
-    const [messages,setMessages]=useState();
-    const [arrivalMsg,setArrivalMsg]=useState();
-    const socket = useRef();
+    const [messages,setMessages]=useState([]);
+    const [arrivalMsg,setArrivalMsg]=useState([]);
+    const socket = useRef(null);
 
     useEffect(()=>{
        const token= cookies.get("token");
@@ -32,9 +31,12 @@ const Chat = () => {
         if(userId){
             console.log(userId)
             getAllcontacts()
-            socket.current = io("http://localhost:4040");
+            socket.current = io("https://chat-apis-crde.onrender.com/",{
+                transports: ["websocket"]
+            });
             console.log("emmited")
             socket.current.emit("add-user", userId);
+            
         }
     },[userId])
 
@@ -91,7 +93,6 @@ const Chat = () => {
     }
 
     const sendmsghandler=(msg)=>{
-        // socket.current = io("http://localhost:4040");
         socket.current.emit("add-msg",{
             from:userId,
             to:selecteduser?._id,

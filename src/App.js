@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/login";
 import Signup from "./pages/register";
 import Chat from "./pages/chatroom";
-// const socket = io.connect("http://localhost:4040");
 
 function App() {
   // function sendMessage() {
