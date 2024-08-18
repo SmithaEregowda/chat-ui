@@ -17,3 +17,13 @@
         }
     }
 }
+
+@media screen and ( max-width:900px){
+    .signupWrapper{
+        justify-content: start;
+        padding: 3rem 2rem;
+        .cont{
+            width: 80%;
+        }
+    }
+}

@@ -8,7 +8,7 @@ const Contacts = ({contacts,handleselectuser,selecteduser}) => {
       <div className={styles.header}></div>
     <div className={styles.contactList}>
       {contacts?.map((item)=>(
-        <div className={`${styles.contactItem} ${selecteduser&&styles.active}`} onClick={()=>handleselectuser(item)}>
+        <div className={`${styles.contactItem} ${selecteduser?._id===item?._id&&styles.active}`} onClick={()=>handleselectuser(item)}>
           <Image src="holder.js/171x180" roundedCircle />
           {item?.name}
         </div>

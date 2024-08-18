@@ -1,12 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './chatroom.module.scss'
 import { Button, Form, InputGroup } from 'react-bootstrap'
 
-const ChatRoom = ({selecteduser,sendmsghandler,messages}) => {
-  const [message,setMessage]=useState()
+const ChatRoom = ({selecteduser,
+  sendmsghandler,messages,
+  message,setMessage
+}) => {
+ 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.header}>Chat with {selecteduser?.name}</div>
+    <div >
+      {selecteduser?._id?
+      <div className={styles.wrapper}>
+         <div className={styles.header}>Chat with {selecteduser?.name}</div>
       <div className={styles.chatBody}>
         <div className={styles.messages}>
         {messages?.map((msg)=>(
@@ -29,6 +34,12 @@ const ChatRoom = ({selecteduser,sendmsghandler,messages}) => {
       </InputGroup>
       </div>
       }
+      </div>:
+      <div className={styles.startchartCont}>
+        <div className={styles.text}>
+          Start Chart with You're Contacts
+        </div>
+        </div>}
     </div>
   )
 }

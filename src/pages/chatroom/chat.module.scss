@@ -18,3 +18,11 @@ position: relative;
   box-shadow: 3px 3px 3px 3px #948484;
 }
 }
+
+@media screen and ( max-width:1000px){
+  .chatConetnt{
+    left: 3rem !important;
+    width: calc(100vw - 5rem) !important;
+    grid-template-columns: 10rem 1fr !important;
+  }
+}

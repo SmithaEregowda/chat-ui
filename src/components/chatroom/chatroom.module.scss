@@ -41,5 +41,22 @@
         }
     }
 
-    
+
+       
 }
+.startchartCont{
+    background-color: #eae6df;
+    height: calc(100vh - 15rem);
+    max-height: calc(100vh - 15rem);
+    overflow: auto;
+    display: flex;
+    flex-flow: column;
+    display: grid;
+      flex: 1;
+      width: inherit;
+      .text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  }

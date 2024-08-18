@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Stack } from 'react-bootstrap'
 import styles from './chat.module.scss'
 import Contacts from '../../components/contacts'
 import ChatRoom from '../../components/chatroom'
@@ -18,6 +17,7 @@ const Chat = () => {
     const [messages,setMessages]=useState([]);
     const [arrivalMsg,setArrivalMsg]=useState([]);
     const socket = useRef(null);
+    const [message,setMessage]=useState()
 
     useEffect(()=>{
        const token= cookies.get("token");
@@ -108,10 +108,10 @@ const Chat = () => {
             })
         };
         AddMessage(requestOptions).then(data => {
+            setMessage('')
             getMessages(selecteduser?._id)
         })
     }
-
 
   return (
         <div className={styles.chatcontainer}>
@@ -127,7 +127,9 @@ const Chat = () => {
                 <ChatRoom {...{
                     selecteduser,
                     sendmsghandler,
-                    messages
+                    messages,
+                    message,
+                    setMessage
                 }}/>
             </div>
         </div>
