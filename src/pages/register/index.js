@@ -45,8 +45,7 @@ const Signup = () => {
         <div className={styles.signupWrapper}>
             <div className={styles.cont}>
             <Card style={{margin:"2rem",padding:"1rem"}}
-                bg='light'
-                border='primary'
+                className={styles.formStyles}
             >
             <Form onSubmit={handleSubmit}>
 

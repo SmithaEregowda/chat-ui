@@ -2,10 +2,19 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    padding-top: 2rem;
+    background-color: #ebbdaf;
+    background-image: linear-gradient(#ffbca7d1,#f6ead8);
+    height:100vh;
     .cont{
-        width: 30%;
+        width: 50%;
     }
+    .formStyles{
+        background-color: #dfbac0;
+        input{
+            background-color: #f6ead8;
+        }
+    }
+    
     .linkText{
         display: flex;
         justify-content: end;
@@ -20,7 +29,8 @@
 @media screen and ( max-width:900px){
     .loginWrapper{
         justify-content: start;
-        padding: 3rem 2rem;
+        padding: 8rem 2rem;
+        align-items: start;
         .cont{
             width: 80%;
         }
