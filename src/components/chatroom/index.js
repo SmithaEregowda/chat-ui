@@ -29,6 +29,7 @@ const ChatRoom = ({selecteduser,
           aria-label="send message"
           aria-describedby="basic-addon1"
           onChange={(e)=>setMessage(e.target.value)}
+          value={message}
         />
         <Button onClick={()=>sendmsghandler(message)}>send</Button>
       </InputGroup>
