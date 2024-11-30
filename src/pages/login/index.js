@@ -114,7 +114,7 @@ const Login = () => {
             <div>
                 <Nav>
                 <Nav.Item>
-                    <Nav.Link href="/register">Signup??</Nav.Link>
+                    <Nav.Link onClick={()=>navigate("/register")}>Signup??</Nav.Link>
                 </Nav.Item>
                 </Nav>
             </div>
