@@ -1,13 +1,23 @@
 .wrapper{
     background-color: #eae6df;
-    height: calc(100vh - 15rem);
-    max-height: calc(100vh - 15rem);
+    height: calc(100vh - 5rem);
+    max-height: calc(100vh - 5rem);
     overflow: auto;
     display: flex;
     flex-flow: column;
     .header{
         padding: 1rem;
         background-color: #dedede;
+        display: flex;
+        grid-gap: 1rem;
+        .imageItem{
+            border-radius: 50%;
+        }
+        .headText{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
     .chatBody{
         flex: 1;
@@ -41,7 +51,15 @@
         }
     }
 
+    .sendItem{
+        cursor: pointer;
+        padding: 0.5rem;
+      }
 
+      .attachItem{
+        cursor: pointer;
+        padding: 0.5rem;
+      }
        
 }
 .startchartCont{
@@ -59,4 +77,5 @@
         justify-content: center;
         align-items: center;
       }
+     
   }

@@ -1,7 +1,7 @@
 .wrapper{
-    background-color: white;
-    height: calc(100vh - 15rem);
-    max-height: calc(100vh - 15rem);
+    background-color: #ffffff;
+    height: calc(100vh - 5rem);
+    max-height: calc(100vh - 5rem);
     overflow: auto;
     border-right: 1px solid #0000;
     .header{
@@ -10,6 +10,17 @@
     }
     .contactItem{
         padding: 1rem;
+        display: flex;
+        grid-gap: 1rem;
+        border-bottom:1px solid #ccc ;
+        .imageItem{
+            border-radius: 50%;
+        }
+        .headText{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         cursor: pointer;
         &:hover{
             background-color: #f5eded;

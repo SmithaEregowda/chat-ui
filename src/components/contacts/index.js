@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './contact.module.scss'
-import { Col, Image, Row, Stack } from 'react-bootstrap'
+import { Image } from 'antd'
 
 const Contacts = ({contacts,handleselectuser,selecteduser}) => {
   return (
@@ -9,8 +9,11 @@ const Contacts = ({contacts,handleselectuser,selecteduser}) => {
     <div className={styles.contactList}>
       {contacts?.map((item)=>(
         <div className={`${styles.contactItem} ${selecteduser?._id===item?._id&&styles.active}`} onClick={()=>handleselectuser(item)}>
-          <Image src="holder.js/171x180" roundedCircle />
-          {item?.name}
+          <div className={styles.imageItem}> 
+          <Image src='/defaultUser.png' height={"2.5rem"} 
+          style={{border:"1px solid #ccc",borderRadius:"50%"}} />
+          </div>
+          <div className={styles.headText}>{item?.name}</div>
         </div>
       ))}
     </div>

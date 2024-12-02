@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from './chatroom.module.scss'
-import { Button, Form, InputGroup } from 'react-bootstrap'
+import {  Form, InputGroup } from 'react-bootstrap'
+import { SendOutlined,PlusOutlined } from '@ant-design/icons';
+import {Image} from "antd"
 
 const ChatRoom = ({selecteduser,
   sendmsghandler,messages,
@@ -11,7 +13,13 @@ const ChatRoom = ({selecteduser,
     <div >
       {selecteduser?._id?
       <div className={styles.wrapper}>
-         <div className={styles.header}>Chat with {selecteduser?.name}</div>
+         <div className={styles.header}>
+          <div className={styles.imageItem}> 
+          <Image src='/defaultUser.png' height={"3.5rem"} 
+          style={{border:"1px solid #ccc",borderRadius:"50%"}} />
+          </div>
+          <div className={styles.headText}>{selecteduser?.name}</div>
+          </div>
       <div className={styles.chatBody}>
         <div className={styles.messages}>
         {messages?.map((msg)=>(
@@ -23,6 +31,9 @@ const ChatRoom = ({selecteduser,
       </div>
       {selecteduser?._id&&
       <div className={styles.chatinputContainer}>
+       <div className={styles.attachItem}>
+          <PlusOutlined style={{fontSize:"1.8rem"}}/>
+       </div>
       <InputGroup className="mb-3">
         <Form.Control
           placeholder="send message"
@@ -31,7 +42,9 @@ const ChatRoom = ({selecteduser,
           onChange={(e)=>setMessage(e.target.value)}
           value={message}
         />
-        <Button onClick={()=>sendmsghandler(message)}>send</Button>
+        <div onClick={()=>sendmsghandler(message)} className={styles.sendItem}>
+            <SendOutlined style={{fontSize:"1.8rem"}} />
+        </div>
       </InputGroup>
       </div>
       }
