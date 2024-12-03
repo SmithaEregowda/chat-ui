@@ -57,17 +57,25 @@ const Login = () => {
       return (
         <div className={styles.loginWrapper}>
             <div className={styles.cont}>
+              
             <Card style={{margin:"2rem",padding:"1rem"}}
              className={styles.formStyles}
             >
+              <div className={styles.heading}>
+                  <div className={styles.header}>Sign In With Email</div>
+                  <div className={styles.text}>sign in / sign up with email to start chat with you're friends and family also 
+                    create a group chat.</div>
+              </div>
+
+            <div className={styles.form}>
             <Form onSubmit={handleSubmit}
             noValidate validated={validated}
             >
          
           <Form.Group controlId="validationCustom01"
-           className="mb-2"
+           className={styles.mB3}
           >
-            <Form.Label>Email</Form.Label>
+            {/* <Form.Label>Email</Form.Label> */}
             <Form.Control
               type="email"
               placeholder="Enter email"
@@ -79,7 +87,7 @@ const Login = () => {
             <Form.Group className="mb-4" 
            controlId="validationCustom02"
             >
-            <Form.Label>Password</Form.Label>
+            {/* <Form.Label>Password</Form.Label> */}
             <Form.Control type="password" 
             placeholder="Password"
             name="password"
@@ -89,7 +97,7 @@ const Login = () => {
         </Form.Group>   
             <Row>
                 <Col>
-                <Button variant="secondary" type="submit">
+                <Button variant="secondary" type="submit" className={styles.loginBtn}>
                 {loading?
                 <><Spinner
                 as="span"
@@ -101,20 +109,18 @@ const Login = () => {
               <span className="visually-hidden">Loading...</span>
             </>
         :
-        "Login"}
+        "LOGIN"}
                 </Button>
-          </Col>  
-          <Col>
-          
-          </Col>  
+          </Col>   
             </Row>      
         </Form>
+            </div>
         <div className={styles.linkText}>
            <div className={styles.linkPlaintxt}> don't have account </div>
             <div>
                 <Nav>
                 <Nav.Item>
-                    <Nav.Link onClick={()=>navigate("/register")}>Signup??</Nav.Link>
+                    <Nav.Link onClick={()=>navigate("/register")}><div className={styles.linkHref}>Signup??</div></Nav.Link>
                 </Nav.Item>
                 </Nav>
             </div>

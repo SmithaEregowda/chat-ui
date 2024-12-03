@@ -47,12 +47,18 @@ const Signup = () => {
             <Card style={{margin:"2rem",padding:"1rem"}}
                 className={styles.formStyles}
             >
+              <div className={styles.heading}>
+                  <div className={styles.header}>Sign UP With Email</div>
+                  <div className={styles.text}>sign in / sign up with email to start chat with you're friends and family also 
+                    create a group chat.</div>
+              </div>
+
             <Form onSubmit={handleSubmit}>
 
             <Form.Group controlId="formName"
-                className="mb-2"
+                className="mb-4 mt-3"
             >
-            <Form.Label>Name</Form.Label>
+            {/* <Form.Label>Name</Form.Label> */}
             <Form.Control
               type="name"
               placeholder="Enter name"
@@ -62,8 +68,8 @@ const Signup = () => {
             />
           </Form.Group>
          
-          <Form.Group controlId="formEmail" className="mb-2">
-            <Form.Label>Email</Form.Label>
+          <Form.Group controlId="formEmail" className="mb-4">
+            {/* <Form.Label>Email</Form.Label> */}
             <Form.Control
               type="email"
               placeholder="Enter email"
@@ -72,10 +78,10 @@ const Signup = () => {
               onChange={handleChange}
             />
           </Form.Group>
-            <Form.Group className="mb-2" 
+            <Form.Group className="mb-4" 
             controlId="formBasicPassword"
             >
-            <Form.Label>Password</Form.Label>
+            {/* <Form.Label>Password</Form.Label> */}
             <Form.Control type="password" 
             placeholder="Password"
             name="password"
@@ -85,7 +91,7 @@ const Signup = () => {
             </Form.Group>   
 
             <Form.Group className="mb-4" controlId="formBasicPassword">
-            <Form.Label>Confirm Password</Form.Label>
+            {/* <Form.Label>Confirm Password</Form.Label> */}
             <Form.Control type="password" 
             placeholder="Confirm Password"
             name="cnfpassword"
@@ -96,7 +102,7 @@ const Signup = () => {
         
         <Row className="mb-2">
             <Col>
-            <Button variant="secondary" type="submit">
+            <Button variant="secondary" type="submit" className={styles.loginBtn}>
             {loading?
                 <><Spinner
                 as="span"
@@ -108,12 +114,9 @@ const Signup = () => {
               <span className="visually-hidden">Loading...</span>
             </>
         :
-        "Register"}
+        "REGISTER"}
                 
             </Button>
-            </Col>
-            <Col>
-            
             </Col>
         </Row>
         <div  className={styles.linkText}>
@@ -122,7 +125,9 @@ const Signup = () => {
             </div>
             <Nav>
             <Nav.Item>
-                <Nav.Link onClick={()=>navigate("/login")}>Login??</Nav.Link>
+                <Nav.Link onClick={()=>navigate("/login")}>
+                  <div className={styles.linkHref}>Login??</div>
+                </Nav.Link>
             </Nav.Item>
             </Nav>
           </div>
