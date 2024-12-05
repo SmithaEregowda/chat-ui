@@ -18,6 +18,7 @@ const Chat = () => {
     const [arrivalMsg,setArrivalMsg]=useState([]);
     const socket = useRef(null);
     const [message,setMessage]=useState()
+    const [chatvisible,setChatVisble]=useState(false);
 
     useEffect(()=>{
        const token= cookies.get("token");
@@ -50,6 +51,7 @@ const Chat = () => {
             });
           }
     },[socket])
+
     useEffect(()=>{
         console.log(arrivalMsg)
         arrivalMsg && setMessages((prev) => [...prev, arrivalMsg]);
@@ -66,6 +68,7 @@ const Chat = () => {
     }
 
     const handleselectuser=(item)=>{
+        setChatVisble(true);
         setSelectedUser(item)
         getMessages(item?._id)
     }
@@ -116,7 +119,8 @@ const Chat = () => {
   return (
         <div className={styles.chatcontainer}>
             <div className={styles.chatHeader}></div>
-            <div className={styles.chatConetnt}>
+            <div className={`${styles.chatConetnt}`}>
+                <div className={`${styles.contacts} ${chatvisible&&styles.contactHide}`}>
                 <Contacts 
                     {...{
                         contacts,
@@ -124,13 +128,18 @@ const Chat = () => {
                         selecteduser
                     }}
                 />
+                </div>
+                <div className={`${styles.chatRoom} ${chatvisible&&styles.chatRoomVisible}`}>
                 <ChatRoom {...{
                     selecteduser,
                     sendmsghandler,
                     messages,
                     message,
-                    setMessage
+                    setMessage,
+                    setChatVisble,
+                    chatvisible
                 }}/>
+                </div>
             </div>
         </div>
   )

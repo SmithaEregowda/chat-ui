@@ -83,16 +83,19 @@
             }
 }
 
-// @media screen and ( max-width:900px){
-//     .signupWrapper{
-//         justify-content: start;
-//         padding: 8rem 2rem;
-//         align-items: start;
-//         .cont{
-//             width: 80%;
-//         }
-//     }
-// }
+@media screen and ( max-width:485px){
+    .cont{
+        width: 25rem !important;
+    }
+
+}
+
+@media screen and ( max-width:400px){
+    .cont{
+        width: 22rem !important;
+    }
+
+}
 
 // #dfbac0
 //rgb(255 244 244)

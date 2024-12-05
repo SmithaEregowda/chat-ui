@@ -1,12 +1,13 @@
 import React from 'react'
 import styles from './chatroom.module.scss'
 import {  Form, InputGroup } from 'react-bootstrap'
-import { SendOutlined,PlusOutlined } from '@ant-design/icons';
+import { SendOutlined,PlusOutlined,LeftOutlined } from '@ant-design/icons';
 import {Image} from "antd"
 
 const ChatRoom = ({selecteduser,
   sendmsghandler,messages,
-  message,setMessage
+  message,setMessage,
+  setChatVisble,chatvisible
 }) => {
  
   return (
@@ -14,6 +15,10 @@ const ChatRoom = ({selecteduser,
       {selecteduser?._id?
       <div className={styles.wrapper}>
          <div className={styles.header}>
+         {chatvisible&&
+         <div className={styles.backKey} onClick={()=>setChatVisble(false)}>
+          <LeftOutlined />
+          </div>}
           <div className={styles.imageItem}> 
           <Image src='/defaultUser.png' height={"3.5rem"} 
           style={{border:"1px solid #ccc",borderRadius:"50%"}} />

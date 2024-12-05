@@ -10,6 +10,7 @@
         background-color: #dedede;
         display: flex;
         grid-gap: 1rem;
+        .backKey{display: none;}
         .imageItem{
             border-radius: 50%;
         }
@@ -78,4 +79,13 @@
         align-items: center;
       }
      
+  }
+
+  @media screen and ( max-width:650px){
+    .backKey{
+      display: grid !important;
+      align-items: center;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
   }

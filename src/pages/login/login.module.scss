@@ -84,13 +84,16 @@
     }
 }
 
-// @media screen and ( max-width:900px){
-//     .loginWrapper{
-//         justify-content: start;
-//         padding: 8rem 2rem;
-//         align-items: start;
-//         .cont{
-//             width: 100%;
-//         }
-//     }
-// }
+@media screen and ( max-width:485px){
+        .cont{
+            width: 25rem !important;
+        }
+    
+}
+
+@media screen and ( max-width:400px){
+    .cont{
+        width: 22rem !important;
+    }
+
+}

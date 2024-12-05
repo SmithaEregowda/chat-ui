@@ -26,3 +26,18 @@ position: relative;
     grid-template-columns: 10rem 1fr !important;
   }
 }
+
+@media screen and ( max-width:650px){
+  .chatRoom{
+    display: none;
+  }
+  .chatConetnt{
+    display: block !important;
+  }
+  .contactHide{
+    display: none !important;
+  }
+  .chatRoomVisible{
+    display: block !important;
+  }
+}
